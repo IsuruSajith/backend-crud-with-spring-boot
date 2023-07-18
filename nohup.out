@@ -345,3 +345,14 @@ java.lang.IllegalStateException: Cannot find module entity for ModuleId(name=bac
 2023-07-18 18:59:59,442 [8450675] SEVERE - #c.i.u.c.QueueProcessor - JDK: 17.0.5; VM: OpenJDK 64-Bit Server VM; Vendor: JetBrains s.r.o.
 2023-07-18 18:59:59,442 [8450675] SEVERE - #c.i.u.c.QueueProcessor - OS: Linux
 2023-07-18 19:00:23,543 [8474776]   WARN - #c.i.i.s.download - Shared indexes download was cancelled. Indexing has completed faster
+2023-07-18 19:02:11,843 [8583076]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2023-07-18 19:02:12,804 [8584037]   WARN - #c.i.o.a.i.ActionUpdater - 405 ms to grab EDT for SelectFileAction#isSelectEnabled@ToolwindowTitle (com.intellij.ide.projectView.impl.SelectFileAction)
+2023-07-18 19:02:12,804 [8584037]   WARN - #c.i.o.a.i.ActionUpdater - 405 ms to grab EDT for GitCommitWithStagingAreaAction#update@NavBarToolbar (git4idea.index.actions.GitCommitWithStagingAreaAction)
+2023-07-18 19:02:13,358 [8584591]   WARN - #c.i.o.a.i.ActionUpdater - 325 ms to grab EDT for DeviceAndSnapshotComboBoxAction#update@NavBarToolbar (com.android.tools.idea.run.deployment.DeviceAndSnapshotComboBoxAction)
+2023-07-18 19:02:13,366 [8584599]   WARN - #c.i.o.a.i.ActionUpdater - 327 ms to grab EDT for ToolWindowHeader$2#update@ToolwindowTitle (com.intellij.toolWindow.ToolWindowHeader$2)
+2023-07-18 19:03:12,237 [8643470]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2023-07-18 19:04:09,967 [8701200]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2023-07-18 19:04:49,848 [8741081]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2023-07-18 19:07:00,609 [8871842]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2023-07-18 19:10:27,881 [9079114]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2023-07-18 19:12:17,856 [9189089]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
