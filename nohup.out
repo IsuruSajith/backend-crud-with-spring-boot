@@ -1,0 +1,8 @@
+CompileCommand: exclude com/intellij/openapi/vfs/impl/FilePartNodeRoot.trieDescend bool exclude = true
+2023-07-18 16:39:19,187 [  10420]   WARN - #c.i.e.RunManager - Must be not called before project components initialized
+Info  | RdCoroutineScope          | 46:DefaultDispatcher-worker-31 | RdCoroutineHost overridden 
+Project service: backend-crud-with-spring-boot
+2023-07-18 16:39:24,283 [  15516]   WARN - #c.i.o.a.i.ActionUpdater - 1641 ms to grab EDT for ToolWindowHeader$2#update@ToolwindowTitle (com.intellij.toolWindow.ToolWindowHeader$2)
+2023-07-18 16:39:28,989 [  20222]   WARN - #c.i.u.x.Binding - no accessors for com.intellij.ide.util.TipsUsageManager$State
+2023-07-18 16:40:38,591 [  89824] SEVERE - com.jediterm.terminal.model.TerminalTextBuffer - Attempt to get line out of bounds: 11 >= 11
+2023-07-18 16:40:38,592 [  89825] SEVERE - com.jediterm.terminal.model.TerminalTextBuffer - Attempt to get line out of bounds: 11 >= 11
