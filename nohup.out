@@ -198,3 +198,10 @@ java.lang.Throwable: Template presentations must not be used directly
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:92)
 2023-07-18 16:47:56,187 [ 527420]   WARN - #c.i.o.r.u.c.SdkDetector - No version is returned for detected SDK IDEA JDK at /opt/jetbrains/idea-IU-223.8214.52
 2023-07-18 16:50:11,051 [ 662284]   WARN - com.jediterm.terminal.TerminalMode - Mode InsertMode is not implemented, setting to false
+2023-07-18 17:06:57,180 [1668413]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-web::unknown, was also in node: null
+2023-07-18 17:06:57,181 [1668414]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading mysql:mysql-connector-java::8.0.26, was also in node: null
+2023-07-18 17:06:57,195 [1668428]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.google.protobuf:protobuf-java::3.11.4, was also in node: null
+2023-07-18 17:06:57,195 [1668428]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:slf4j-api::2.0.0-alpha1, was also in node: null
+2023-07-18 17:06:57,195 [1668428]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.projectlombok:lombok::unknown, was also in node: null
+2023-07-18 17:06:57,195 [1668428]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-data-jpa::unknown, was also in node: null
+2023-07-18 17:06:57,196 [1668429]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-validation::unknown, was also in node: null
