@@ -6,12 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SampleDTO {
+public class SampleDTO implements Serializable {
 
     private String regNo;
     private String name;
