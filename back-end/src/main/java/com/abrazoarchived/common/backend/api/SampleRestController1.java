@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/samples")
+@CrossOrigin
 public class SampleRestController1 {
     @GetMapping
     public void getSample() {
