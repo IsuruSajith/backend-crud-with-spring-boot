@@ -26,15 +26,16 @@ public class SampleRestController1 {
 
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @PatchMapping(value = "/{reg}")
+    @PatchMapping(value = "/{reg}", consumes = "application/json")
     public void updateSample(@PathVariable String reg, @RequestBody @Validated SampleDTO sampleDTO) {
         sampleDTO.setReg(reg);
         sampleService.updateSample(sampleDTO);
     }
 
-    @DeleteMapping
-    public void deleteSample() {
-        System.out.println("delete");
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{reg}")
+    public void deleteSample(@PathVariable String reg) {
+        sampleService.deleteSample(reg);
     }
 
     @GetMapping

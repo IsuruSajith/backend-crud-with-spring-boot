@@ -35,7 +35,7 @@ public class SampleServiceImpl implements SampleService {
 
     @Override
     public void deleteSample(String regNo) {
-
+        sampleRepository.deleteById(regNo);
     }
 
     @Override
