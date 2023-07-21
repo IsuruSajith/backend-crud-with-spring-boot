@@ -25,9 +25,11 @@ public class SampleRestController1 {
     }
 
 
-    @PatchMapping
-    public void updateSample() {
-        System.out.println("patch");
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @PatchMapping(value = "/{reg}")
+    public void updateSample(@PathVariable String reg, @RequestBody @Validated SampleDTO sampleDTO) {
+        sampleDTO.setReg(reg);
+        sampleService.updateSample(sampleDTO);
     }
 
     @DeleteMapping

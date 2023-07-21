@@ -30,7 +30,7 @@ public class SampleServiceImpl implements SampleService {
 
     @Override
     public void updateSample(SampleDTO sample) {
-
+        sampleRepository.save(mapper.map(sample, Sample.class));
     }
 
     @Override
