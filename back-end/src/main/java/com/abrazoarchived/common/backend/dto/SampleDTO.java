@@ -14,12 +14,11 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Builder
 public class SampleDTO implements Serializable {
-
     @NotBlank
-    private String regNo;
+    private String reg;
     @NotBlank
     private String name;
     @NotBlank
-    private String bloodCategory;
+    private String blood;
 
 }

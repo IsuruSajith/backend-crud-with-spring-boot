@@ -1,14 +1,33 @@
 package com.abrazoarchived.common.backend.api;
 
+import com.abrazoarchived.common.backend.dto.SampleDTO;
+import com.abrazoarchived.common.backend.service.SampleService;
+import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/samples")
 @CrossOrigin
 public class SampleRestController1 {
-    @GetMapping
-    public void getSample() {
-        System.out.println("get");
+
+    private final SampleService sampleService;
+
+    public SampleRestController1(SampleService sampleService) {
+        this.sampleService = sampleService;
+    }
+
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(consumes = "application/json")
+    public void saveSample(@RequestBody @Validated SampleDTO sampleDTO) {
+        sampleService.saveSample(sampleDTO);
+    }
+
+
+    @PatchMapping
+    public void updateSample() {
+        System.out.println("patch");
     }
 
     @DeleteMapping
@@ -16,14 +35,9 @@ public class SampleRestController1 {
         System.out.println("delete");
     }
 
-    @PatchMapping
-    public void updateSample() {
-        System.out.println("patch");
-    }
-
-    @PostMapping
-    public void saveSample() {
-        System.out.println("post");
+    @GetMapping
+    public void getSample() {
+        System.out.println("get");
     }
 
 }

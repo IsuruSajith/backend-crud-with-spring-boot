@@ -19,9 +19,9 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "sample")
 public class Sample {
     @Id
-    String regNo;
+    private String reg;
     @Column(nullable = false)
-    String name;
+    private String name;
     @Column(nullable = false)
-    String bloodCategory;
+    private String blood;
 }
