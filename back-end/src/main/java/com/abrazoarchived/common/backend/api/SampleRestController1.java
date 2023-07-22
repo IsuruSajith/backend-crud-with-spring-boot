@@ -38,9 +38,9 @@ public class SampleRestController1 {
         sampleService.deleteSample(reg);
     }
 
-    @GetMapping
-    public void getSample() {
-        System.out.println("get");
+    @GetMapping("/{reg}")
+    public SampleDTO getSample(@PathVariable String reg) {
+        return sampleService.getSample(reg);
     }
 
 }

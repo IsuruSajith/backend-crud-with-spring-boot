@@ -5,8 +5,10 @@ import com.abrazoarchived.common.backend.entity.Sample;
 import com.abrazoarchived.common.backend.repository.SampleRepository;
 import com.abrazoarchived.common.backend.service.SampleService;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -40,7 +42,8 @@ public class SampleServiceImpl implements SampleService {
 
     @Override
     public SampleDTO getSample(String regNo) {
-        return null;
+        return sampleRepository.findById(regNo).map(sample -> mapper.map(sample,SampleDTO.class))
+                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND, "the sample does not found in the database"));
     }
 
     @Override
