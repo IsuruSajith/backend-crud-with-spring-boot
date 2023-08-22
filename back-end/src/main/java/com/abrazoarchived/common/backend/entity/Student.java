@@ -2,6 +2,7 @@ package com.abrazoarchived.common.backend.entity;
 
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Entity(name = "student")
 @TypeDefs({
         @TypeDef(name = "json",typeClass = JsonType.class)
