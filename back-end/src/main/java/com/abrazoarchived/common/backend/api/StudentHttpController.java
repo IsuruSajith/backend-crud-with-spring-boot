@@ -14,6 +14,7 @@ public class StudentHttpController {
     public StudentDTO saveStudent(@RequestBody StudentDTO studentDTO) {
         StudentServiceImpl studentService = new StudentServiceImpl();
         studentService.saveStudent(studentDTO);
+        System.out.println(studentService);
         return studentDTO;
     }
 }
