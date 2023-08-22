@@ -1,14 +1,12 @@
 package com.abrazoarchived.common.backend.api;
 
 import com.abrazoarchived.common.backend.dto.StudentDTO;
+import com.abrazoarchived.common.backend.dto.request.StudentUpdateDTO;
 import com.abrazoarchived.common.backend.service.SampleService;
 import com.abrazoarchived.common.backend.service.StudentService;
 import com.abrazoarchived.common.backend.service.impl.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/student")
@@ -22,5 +20,11 @@ public class StudentHttpController {
         //System.out.println(studentService);
         System.out.println(studentService.saveStudent(studentDTO));
         return studentDTO;
+    }
+
+    @PatchMapping
+    public String updateStudent(@RequestBody StudentUpdateDTO studentUpdateDTO) {
+        String message = studentService.updateStudent(studentUpdateDTO);
+        return message;
     }
 }

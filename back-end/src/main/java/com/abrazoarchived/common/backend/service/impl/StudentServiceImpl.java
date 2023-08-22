@@ -1,6 +1,7 @@
 package com.abrazoarchived.common.backend.service.impl;
 
 import com.abrazoarchived.common.backend.dto.StudentDTO;
+import com.abrazoarchived.common.backend.dto.request.StudentUpdateDTO;
 import com.abrazoarchived.common.backend.entity.Student;
 import com.abrazoarchived.common.backend.repository.StudentRepository;
 import com.abrazoarchived.common.backend.service.StudentService;
@@ -22,5 +23,24 @@ public class StudentServiceImpl implements StudentService {
         studentRepository.save(student);
 
         return studentDTO.getFullName();
+    }
+
+    @Override
+    public String updateStudent(StudentUpdateDTO studentUpdateDTO) {
+
+        if (studentRepository.existsById(studentUpdateDTO.getNic())) {
+            Student student = studentRepository.getReferenceById(studentUpdateDTO.getNic());
+
+            student.setFullName(studentUpdateDTO.getFullName());
+            student.setAddress(studentUpdateDTO.getAddress());
+            student.setCourses(studentUpdateDTO.getCourses());
+            student.setContactNumbers(studentUpdateDTO.getContactNumbers());
+
+            studentRepository.save(student);
+        } else {
+            throw new RuntimeException("nic not found");
+
+        }
+        return studentUpdateDTO.getNic() + " updated successfully";
     }
 }
