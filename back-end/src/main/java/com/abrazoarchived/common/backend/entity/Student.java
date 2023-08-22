@@ -38,7 +38,7 @@ public class Student {
     @Column(length = 100)
     private String faculty;
     @Type(type = "json")
-    @Column(name = "contact_numbers",length = 20)
+    @Column(name = "contact_numbers",length = 20,columnDefinition = "json")
     private ArrayList contactNumbers;
 
 }
