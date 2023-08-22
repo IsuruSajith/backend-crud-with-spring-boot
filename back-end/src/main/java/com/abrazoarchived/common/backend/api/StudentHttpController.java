@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1/student")
 public class StudentHttpController {
-
     @PostMapping
-    public String saveStudent(@RequestBody StudentDTO studentDTO) {
+    public StudentDTO saveStudent(@RequestBody StudentDTO studentDTO) {
         System.out.println(studentDTO.getFullName());
-        return studentDTO.getFullName();
+        return studentDTO;
     }
 }
