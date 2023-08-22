@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1/samples")
 @CrossOrigin
-public class SampleRestController1 {
+public class SampleRestController {
 
     private final SampleService sampleService;
 
-    public SampleRestController1(SampleService sampleService) {
+    public SampleRestController(SampleService sampleService) {
         this.sampleService = sampleService;
     }
 
