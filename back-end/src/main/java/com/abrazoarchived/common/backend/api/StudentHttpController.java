@@ -20,9 +20,7 @@ public class StudentHttpController {
         //StudentServiceImpl studentService = new StudentServiceImpl();
         //studentService.saveStudent(studentDTO);
         //System.out.println(studentService);
-
-        studentService.saveStudent(studentDTO);
-
+        System.out.println(studentService.saveStudent(studentDTO));
         return studentDTO;
     }
 }

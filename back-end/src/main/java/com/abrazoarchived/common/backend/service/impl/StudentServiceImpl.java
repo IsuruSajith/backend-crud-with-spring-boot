@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentServiceImpl implements StudentService {
     @Override
-    public void saveStudent(StudentDTO studentDTO) {
+    public String saveStudent(StudentDTO studentDTO) {
         System.out.println(studentDTO.toString());
+        return studentDTO.getFullName();
     }
 }
