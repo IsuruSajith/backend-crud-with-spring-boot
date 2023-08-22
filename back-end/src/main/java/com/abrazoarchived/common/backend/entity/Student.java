@@ -1,8 +1,12 @@
 package com.abrazoarchived.common.backend.entity;
 
+import com.vladmihalcea.hibernate.type.json.JsonType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +18,9 @@ import java.util.ArrayList;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "student")
+@TypeDefs({
+        @TypeDef(name = "json",typeClass = JsonType.class)
+})
 public class Student {
     @Id
     private String nic;
@@ -25,10 +32,13 @@ public class Student {
     private int admissionNo;
     @Column(name = "admission_date",nullable = false)
     private Date addmissionDate;
+    @Type(type = "json")
     @Column(nullable = false, length = 100)
     private ArrayList courses;
     @Column(length = 100)
     private String faculty;
+    @Type(type = "json")
+    @Column(name = "contact_numbers",length = 20)
     private ArrayList contactNumbers;
 
 }
