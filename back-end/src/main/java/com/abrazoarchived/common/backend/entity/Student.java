@@ -33,12 +33,15 @@ public class Student {
     @Column(name = "admission_date",nullable = false)
     private Date addmissionDate;
     @Type(type = "json")
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100,columnDefinition = "json")
     private ArrayList courses;
     @Column(length = 100)
     private String faculty;
     @Type(type = "json")
     @Column(name = "contact_numbers",length = 20,columnDefinition = "json")
     private ArrayList contactNumbers;
+
+    @Column(name = "active_status",columnDefinition = "TINYINT default 0")
+    private boolean activeStatus;
 
 }
