@@ -29,10 +29,11 @@ public class StudentHttpController {
     }
 
     @GetMapping(
-            path = "/get-by-id"
+            path = "/get-by-nic",
+            params = "nic"
     )
-    public StudentDTO getStudentById() {
-
-
+    public StudentDTO getStudentById(@RequestParam(value = "nic") String studentNic) {
+        System.out.println(studentNic);
+        return null;
     }
 }
