@@ -43,4 +43,17 @@ public class StudentServiceImpl implements StudentService {
         }
         return studentUpdateDTO.getNic() + " updated successfully";
     }
+
+    @Override
+    public StudentDTO getStudentById(String studentNic) {
+        if (studentRepository.existsById(studentNic)) {
+            Student student = studentRepository.getReferenceById(studentNic);
+            StudentDTO studentDTO = new StudentDTO(student.getNic(), student.getFullName(), student.getAddress(), student.getAdmissionNo(),
+
+                    student.getAddmissionDate(), student.getCourses(), student.getFaculty(), student.getContactNumbers(), student.isActiveStatus());
+            return studentDTO;
+        } else {
+            throw new RuntimeException("not found");
+        }
+    }
 }

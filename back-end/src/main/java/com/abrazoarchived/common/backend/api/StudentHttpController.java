@@ -34,6 +34,7 @@ public class StudentHttpController {
     )
     public StudentDTO getStudentById(@RequestParam(value = "nic") String studentNic) {
         System.out.println(studentNic);
-        return null;
+        StudentDTO student = studentService.getStudentById(studentNic);
+        return student;
     }
 }

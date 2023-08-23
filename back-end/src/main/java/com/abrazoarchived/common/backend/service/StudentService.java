@@ -7,4 +7,7 @@ public interface StudentService {
     public String saveStudent(StudentDTO studentDTO);
 
     String updateStudent(StudentUpdateDTO studentUpdateDTO);
+
+    StudentDTO getStudentById(String studentNic);
+
 }
