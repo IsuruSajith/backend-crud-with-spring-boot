@@ -27,4 +27,12 @@ public class StudentHttpController {
         String message = studentService.updateStudent(studentUpdateDTO);
         return message;
     }
+
+    @GetMapping(
+            path = "/get-by-id"
+    )
+    public StudentDTO getStudentById() {
+
+
+    }
 }
