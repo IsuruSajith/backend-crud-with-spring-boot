@@ -9,9 +9,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.ArrayList;
 
@@ -31,6 +29,7 @@ public class Student {
     @Column(nullable = false)
     private String address;
     @Column(name = "admission_no",nullable = false,length = 50)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int admissionNo;
     @Column(name = "admission_date",nullable = false)
     private Date addmissionDate;

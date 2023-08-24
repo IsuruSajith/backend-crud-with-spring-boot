@@ -22,7 +22,6 @@ public class StudentServiceImpl implements StudentService {
     public String saveStudent(StudentDTO studentDTO) {
         Student student = new Student(studentDTO.getNic(), studentDTO.getFullName(), studentDTO.getAddress(), studentDTO.getAdmissionNo(), studentDTO.getAddmissionDate(), studentDTO.getCourses(), studentDTO.getFaculty(), studentDTO.getContactNumbers(), studentDTO.isActiveStatus());
         studentRepository.save(student);
-
         return studentDTO.getFullName();
     }
 
@@ -68,7 +67,17 @@ public class StudentServiceImpl implements StudentService {
                     student.getAddmissionDate(), student.getCourses(), student.getFaculty(), student.getContactNumbers(), student.isActiveStatus());
             studentDTOS.add(studentDTO);
         }
-
         return studentDTOS;
+    }
+
+    @Override
+    public String deleteById(String studentNic) {
+        if (studentRepository.existsById(studentNic)) {
+
+            studentRepository.deleteById(studentNic);
+            return studentNic+" is deleted successfully";
+        } else {
+            throw new RuntimeException("not found for delete");
+        }
     }
 }

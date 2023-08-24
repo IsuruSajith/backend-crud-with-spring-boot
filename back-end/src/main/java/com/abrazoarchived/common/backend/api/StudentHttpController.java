@@ -47,4 +47,13 @@ public class StudentHttpController {
 
         return allStudents;
     }
+
+    @DeleteMapping(
+            path = "/delete-student/{nic}"
+    )
+    public String deleteStudent(@PathVariable(value = "nic") String studentNic) {
+
+        String message = studentService.deleteById(studentNic);
+        return message;
+    }
 }

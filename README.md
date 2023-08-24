@@ -1,1 +1,1 @@
-This project is for common back for all of the back end project, purpose is to make basic crud operation. it easy to every one get sketch of the common back end and inser their controllers and business logic.
+This project is for common back for all the back end project, purpose is to make basic crud operation. it easy to every one get sketch of the common back end and insert their controllers and business logic.
