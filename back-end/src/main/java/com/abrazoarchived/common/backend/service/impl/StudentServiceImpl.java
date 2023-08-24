@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.validation.constraints.NotBlank;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -55,5 +56,19 @@ public class StudentServiceImpl implements StudentService {
         } else {
             throw new RuntimeException("not found");
         }
+    }
+
+    @Override
+    public List<StudentDTO> getAllStudents() {
+        List<Student> students = studentRepository.findAll();
+        ArrayList<StudentDTO> studentDTOS = new ArrayList<>();
+        for (Student student : students) {
+            StudentDTO studentDTO = new StudentDTO(student.getNic(), student.getFullName(), student.getAddress(), student.getAdmissionNo(),
+
+                    student.getAddmissionDate(), student.getCourses(), student.getFaculty(), student.getContactNumbers(), student.isActiveStatus());
+            studentDTOS.add(studentDTO);
+        }
+
+        return studentDTOS;
     }
 }

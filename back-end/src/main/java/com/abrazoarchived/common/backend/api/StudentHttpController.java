@@ -8,6 +8,8 @@ import com.abrazoarchived.common.backend.service.impl.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/v1/student")
 public class StudentHttpController {
@@ -33,8 +35,16 @@ public class StudentHttpController {
             params = "nic"
     )
     public StudentDTO getStudentById(@RequestParam(value = "nic") String studentNic) {
-        System.out.println(studentNic);
         StudentDTO student = studentService.getStudentById(studentNic);
         return student;
+    }
+
+    @GetMapping(
+            path = "/get-all-students"
+    )
+    public List<StudentDTO> getAllStudents() {
+        List<StudentDTO> allStudents = studentService.getAllStudents();
+
+        return allStudents;
     }
 }
