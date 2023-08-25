@@ -56,4 +56,12 @@ public class StudentHttpController {
         String message = studentService.deleteById(studentNic);
         return message;
     }
+
+    @GetMapping(
+            path = "/get-status/{status}"
+    )
+    public List<StudentDTO> getStudentWithStatus(@PathVariable("status") boolean status) {
+        List<StudentDTO> studentByStatus = studentService.getStudentByStatus(status);
+        return studentByStatus;
+    }
 }

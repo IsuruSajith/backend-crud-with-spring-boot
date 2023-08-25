@@ -8,8 +8,6 @@ import com.abrazoarchived.common.backend.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.validation.constraints.NotBlank;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,10 +25,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public String updateStudent(StudentUpdateDTO studentUpdateDTO) {
-
         if (studentRepository.existsById(studentUpdateDTO.getNic())) {
             Student student = studentRepository.getReferenceById(studentUpdateDTO.getNic());
-
             student.setFullName(studentUpdateDTO.getFullName());
             student.setAddress(studentUpdateDTO.getAddress());
             student.setCourses(studentUpdateDTO.getCourses());
@@ -73,11 +69,24 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public String deleteById(String studentNic) {
         if (studentRepository.existsById(studentNic)) {
-
             studentRepository.deleteById(studentNic);
             return studentNic+" is deleted successfully";
         } else {
             throw new RuntimeException("not found for delete");
         }
+    }
+
+    @Override
+    public List<StudentDTO> getStudentByStatus(boolean status) {
+        List<Student> studentsByActiveStatus = studentRepository.findAllByActiveStatusEquals(status);
+        ArrayList<StudentDTO> studentDTOS = new ArrayList<>();
+        for (Student student : studentsByActiveStatus) {
+            StudentDTO studentDTO = new StudentDTO(student.getNic(), student.getFullName(), student.getAddress(), student.getAdmissionNo(),
+
+                    student.getAddmissionDate(), student.getCourses(), student.getFaculty(), student.getContactNumbers(), student.isActiveStatus());
+            studentDTOS.add(studentDTO);
+
+        }
+        return studentDTOS;
     }
 }

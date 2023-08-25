@@ -15,4 +15,6 @@ public interface StudentService {
     List<StudentDTO> getAllStudents();
 
     String deleteById(String studentNic);
+
+    List<StudentDTO> getStudentByStatus(boolean status);
 }
