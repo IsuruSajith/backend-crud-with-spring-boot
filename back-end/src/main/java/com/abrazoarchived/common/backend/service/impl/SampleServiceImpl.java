@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -48,6 +49,9 @@ public class SampleServiceImpl implements SampleService {
 
     @Override
     public List<SampleDTO> findSample(String query) {
-        return null;
+        query = "%" + query + "%";
+        return sampleRepository.findSampleByRegLikeOrNameLikeOrBloodLike(query, query, query)
+                .stream().map(sample->mapper.map(sample,SampleDTO.class)).collect(Collectors.toList());
+
     }
 }
