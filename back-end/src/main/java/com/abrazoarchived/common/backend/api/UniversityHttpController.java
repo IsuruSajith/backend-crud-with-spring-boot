@@ -1,6 +1,7 @@
 package com.abrazoarchived.common.backend.api;
 
 import com.abrazoarchived.common.backend.dto.UniversityDTO;
+import com.abrazoarchived.common.backend.service.CrudService;
 import com.abrazoarchived.common.backend.service.UniversityService;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.*;
 public class UniversityHttpController {
     private final UniversityService universityService;
 
-    public UniversityHttpController(UniversityService universityService) {
+    private final CrudService crudService;
+    public UniversityHttpController(UniversityService universityService, CrudService crudService) {
         this.universityService = universityService;
+        this.crudService = crudService;
     }
 
     @PostMapping(consumes = "application/json")
@@ -19,5 +22,14 @@ public class UniversityHttpController {
         String message = universityService.save(universityDTO);
         return message;
 
+    }
+
+    @GetMapping(
+            path = "/{pk}"
+    )
+    public UniversityDTO findById(@PathVariable("pk") int pk) {
+
+        crudService.findById(pk);
+        return null;
     }
 }
