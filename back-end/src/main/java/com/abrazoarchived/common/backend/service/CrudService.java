@@ -12,6 +12,8 @@ public interface CrudService<T,ID> {
 
     Optional<T> findById(ID pk) throws Exception;
 
+
+
     List<T> findAll() throws Exception;
 
     boolean existsById(ID pk) throws Exception;

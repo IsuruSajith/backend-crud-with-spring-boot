@@ -1,14 +1,16 @@
 package com.abrazoarchived.common.backend.service.impl;
 
 import com.abrazoarchived.common.backend.dto.UniversityDTO;
+import com.abrazoarchived.common.backend.entity.University;
 import com.abrazoarchived.common.backend.repository.custom.UniversityRepoWithCrud;
 import com.abrazoarchived.common.backend.service.CrudService;
+import com.sun.xml.bind.v2.model.core.ID;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UniversityCrudServiceImpl implements CrudService {
+public class UniversityCrudServiceImpl implements CrudService<University,Integer> {
 
 
     private final UniversityRepoWithCrud<UniversityDTO,Integer> universityRepoWithCrud;
@@ -18,39 +20,39 @@ public class UniversityCrudServiceImpl implements CrudService {
 
     }
 
+
     @Override
     public long count() throws Exception {
         return 0;
     }
 
     @Override
-    public Object save(Object entity) throws Exception {
+    public University save(University entity) throws Exception {
         return null;
     }
 
     @Override
-    public void update(Object entity) throws Exception {
+    public void update(University entity) throws Exception {
 
     }
 
     @Override
-    public void deleteById(Object pk) throws Exception {
+    public void deleteById(Integer pk) throws Exception {
 
     }
 
     @Override
-    public Optional findById(Object pk) throws Exception {
-        Optional byId = universityRepoWithCrud.findById((Integer) pk);
-        return byId;
+    public Optional<University> findById(Integer pk) throws Exception {
+        return Optional.empty();
     }
 
     @Override
-    public List findAll() throws Exception {
+    public List<University> findAll() throws Exception {
         return null;
     }
 
     @Override
-    public boolean existsById(Object pk) throws Exception {
+    public boolean existsById(Integer pk) throws Exception {
         return false;
     }
 }
