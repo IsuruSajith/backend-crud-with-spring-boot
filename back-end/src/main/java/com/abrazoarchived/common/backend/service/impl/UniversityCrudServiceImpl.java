@@ -1,6 +1,7 @@
 package com.abrazoarchived.common.backend.service.impl;
 
 import com.abrazoarchived.common.backend.repository.CrudRepository;
+import com.abrazoarchived.common.backend.repository.custom.UniversityRepoWithCrud;
 import com.abrazoarchived.common.backend.service.CrudService;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -9,10 +10,12 @@ import java.util.Optional;
 @Service
 public class UniversityCrudServiceImpl implements CrudService {
 
-    private final CrudRepository crudRepository;
+    //private final CrudRepository crudRepository;
+    private final UniversityRepoWithCrud universityRepoWithCrud;
 
-    public UniversityCrudServiceImpl(CrudRepository crudRepository) {
-        this.crudRepository = crudRepository;
+    public UniversityCrudServiceImpl(CrudRepository crudRepository, UniversityRepoWithCrud universityRepoWithCrud) {
+        this.universityRepoWithCrud = universityRepoWithCrud;
+       // this.crudRepository = crudRepository;
     }
 
     @Override
@@ -37,8 +40,8 @@ public class UniversityCrudServiceImpl implements CrudService {
 
     @Override
     public Optional findById(Object pk) throws Exception {
-        crudRepository.findById(pk);
-        return Optional.empty();
+        Optional byId = universityRepoWithCrud.findById((Integer) pk);
+        return byId;
     }
 
     @Override

@@ -5,6 +5,8 @@ import com.abrazoarchived.common.backend.service.CrudService;
 import com.abrazoarchived.common.backend.service.UniversityService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/api/v1/university")
@@ -27,9 +29,9 @@ public class UniversityHttpController {
     @GetMapping(
             path = "/{pk}"
     )
-    public UniversityDTO findById(@PathVariable("pk") int pk) {
+    public Optional findById(@PathVariable("pk") int pk) throws Exception {
 
-        crudService.findById(pk);
-        return null;
+        Optional universityDTO = crudService.findById(pk);
+        return universityDTO;
     }
 }
