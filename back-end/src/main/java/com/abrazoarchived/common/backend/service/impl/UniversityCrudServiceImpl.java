@@ -1,6 +1,6 @@
 package com.abrazoarchived.common.backend.service.impl;
 
-import com.abrazoarchived.common.backend.repository.CrudRepository;
+import com.abrazoarchived.common.backend.dto.UniversityDTO;
 import com.abrazoarchived.common.backend.repository.custom.UniversityRepoWithCrud;
 import com.abrazoarchived.common.backend.service.CrudService;
 import org.springframework.stereotype.Service;
@@ -10,12 +10,12 @@ import java.util.Optional;
 @Service
 public class UniversityCrudServiceImpl implements CrudService {
 
-    //private final CrudRepository crudRepository;
-    private final UniversityRepoWithCrud universityRepoWithCrud;
 
-    public UniversityCrudServiceImpl(CrudRepository crudRepository, UniversityRepoWithCrud universityRepoWithCrud) {
+    private final UniversityRepoWithCrud<UniversityDTO,Integer> universityRepoWithCrud;
+
+    public UniversityCrudServiceImpl(UniversityRepoWithCrud<UniversityDTO,Integer> universityRepoWithCrud) {
         this.universityRepoWithCrud = universityRepoWithCrud;
-       // this.crudRepository = crudRepository;
+
     }
 
     @Override
